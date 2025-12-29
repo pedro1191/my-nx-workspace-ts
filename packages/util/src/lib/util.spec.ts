@@ -1,7 +1,17 @@
-import { util } from './util.js';
+import { formatMessage, getRandomItem } from './util.js';
 
 describe('util', () => {
-  it('should work', () => {
-    expect(util()).toEqual('util');
+  describe('formatMessage', () => {
+    it('should format message with prefix', () => {
+      expect(formatMessage('TEST', 'hello')).toEqual('[TEST] hello');
+    });
+  });
+
+  describe('getRandomItem', () => {
+    it('should return an item from the array', () => {
+      const items = ['a', 'b', 'c'];
+      const result = getRandomItem(items);
+      expect(items).toContain(result);
+    });
   });
 });
